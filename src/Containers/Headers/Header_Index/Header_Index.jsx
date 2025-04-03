@@ -45,7 +45,7 @@ const Header_Index = () => {
           <Change_Language />
         </div>
         <Link className='Sign_in_Button'>{t("Sign in")}</Link>
-        <Link className='Sign_up_Button'>{t("Sign up")}</Link>
+        <Link className='Sign_up_Button' to='Sign_Up'>{t("Sign up")}</Link>
       </div>
     </div>
   )

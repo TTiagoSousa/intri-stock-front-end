@@ -1,0 +1,334 @@
+@use '../../../Styles/Colors.scss' as Color;
+@use '../../../Styles/Fonts.scss' as Font;
+@use '../../../Styles/Formats.scss' as Format;
+
+.Sign_Up{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+
+  .Image_Container{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+      
+    video{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .Form_Container{
+    position: relative;
+    width: 40%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1%;
+    box-sizing: border-box;
+    align-items: center;
+
+    header{
+      width: 100%;
+      height: 2vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      .Button_Field{
+        position: relative;
+        width: 25px;
+        height: 25px;
+      }
+    }
+
+    form{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 400px;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 20px;
+      border-radius: Format.$border_radius;
+      box-shadow: Format.$box_shadow;
+
+      .Title{
+        width: 100%;
+
+        span{
+          font-family: Font.$font_family_poppins;
+          font-size: 20px;
+          font-weight: 600;
+        }
+      }
+
+      .Input_Field{
+        width: 100%;
+        height: 60px;
+      }
+
+      .Button_Field{
+        width: 100%;
+        height: 30px;
+      }
+
+      .Check_Field{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        div:nth-of-type(1){
+          width: auto;
+          display: flex;
+          gap: 10px;
+
+          span{
+            font-family: Font.$font_family_poppins;
+            font-weight: 500;
+            font-size: 14px;
+          }
+        }
+
+        div:nth-of-type(2){
+            
+          span{
+            font-family: Font.$font_family_poppins;
+            font-weight: 500;
+            font-size: 14px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .Info{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: auto;
+      gap: 10px;
+      display: flex;
+
+      span, a{
+        font-family: Font.$font_family_poppins;
+        font-weight: 500;
+        font-size: 17px;
+      }
+
+      a{
+        color: Color.$blue;
+      }
+    }
+  }
+}
+
+.Dark_Mode{
+
+  .Sign_Up{
+
+    .Form_Container{
+
+      form{
+        background-color: Color.$secundary_color_dark;
+
+        .Title{
+
+          span{
+            color: Color.$white;
+          }
+        }
+
+        .Check_Field{
+
+          div:nth-of-type(1){
+            
+            span{
+              color: Color.$gray;
+            }
+          }
+
+          div:nth-of-type(2){
+            
+            span{
+              color: Color.$gray;
+
+              &:hover{
+                color: Color.$yellow;
+                transition: 0.3s;
+              }
+            }
+          }
+        }
+      }
+
+      .Info{
+
+        span{
+          color: Color.$gray;
+        }
+  
+        a{
+          
+          &:hover{
+            color: Color.$yellow;
+            transition: 0.3s;
+          }
+        }
+      }
+    }
+  }
+}
+
+.Light_Mode{
+
+  .Sign_Up{
+
+    .Form_Container{
+
+      form{
+        background-color: Color.$secundary_color_light;
+
+        .Title{
+
+          span{
+            color: Color.$black;
+          }
+        }
+
+        .Check_Field{
+
+          div:nth-of-type(1){
+            
+            span{
+              color: Color.$black;
+            }
+          }
+
+          div:nth-of-type(2){
+            
+            span{
+              color: Color.$black;
+
+              &:hover{
+                color: Color.$orange;
+                transition: 0.3s;
+              }
+            }
+          }
+        }
+      }
+
+      .Info{
+
+        span{
+          color: Color.$black;
+        }
+  
+        a{
+          
+          &:hover{
+            color: Color.$orange;
+            transition: 0.3s;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1300px){
+
+  .Sign_Up{
+
+    .Image_Container{
+      width: 50%;
+    }
+
+    .Form_Container{
+      width: 50%;
+    }
+  }
+}
+
+@media (max-width: 1100px){
+
+  .Sign_Up{
+
+    .Image_Container{
+      width: 45%;
+    }
+
+    .Form_Container{
+      width: 55%;
+    }
+  }
+}
+
+@media (max-width: 1100px){
+
+  .Sign_Up{
+    flex-direction: column;
+
+    .Image_Container{
+      width: 100%;
+      height: 35%;
+    }
+
+    .Form_Container{
+      position: relative;
+      width: 100%;
+      height: 65%;
+      align-items: center;
+      justify-content: space-between;
+
+      header{
+        position: fixed;
+        top: 2%;
+      }
+
+      form{
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .Info{
+        position: absolute;
+        width: 100%;
+        bottom: 0%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
+
+@media (max-width: 1100px){
+
+  .Sign_Up{
+
+    .Form_Container{
+    
+      form{
+        width: 350px;
+      }
+    }
+  }
+}

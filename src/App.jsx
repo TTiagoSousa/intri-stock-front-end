@@ -1,17 +1,18 @@
 import { useState } from "react";
-import { Route, Routes } from "react-router";
+import { Route, Routes, Navigate } from 'react-router-dom';
 import * as Public_Page from './Imports/public.pages';
 import './App.scss';
 
 function App() {
 
-  const [ authenticated ] = useState(true)
+  const [ authenticated ] = useState(false)
 
   return (
     <main>
       <Routes>
 
         <Route index element={<Public_Page.Index />} />
+        <Route path='Sign_Up' element={ authenticated ? <Navigate to="/" /> :  <Public_Page.Sign_Up /> } />
 
       </Routes>
     </main>
