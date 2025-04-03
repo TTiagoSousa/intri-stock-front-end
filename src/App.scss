@@ -1,0 +1,24 @@
+@use './Styles/Colors.scss' as Color;
+
+*{
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  text-decoration: none;
+}
+
+.Dark_Mode{
+
+  main{
+    background-color: Color.$primary_color_dark;
+    position: relative;
+  }
+}
+
+.Light_Mode{
+  
+  main{
+    background-color: Color.$primary_color_light;
+    position: relative;
+  }
+}

@@ -1,0 +1,1 @@
+export { default as World } from '../Assets/Icons/World/World';

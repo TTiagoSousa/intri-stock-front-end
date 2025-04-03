@@ -1,0 +1,200 @@
+@use '../../../Styles/Colors.scss' as Color;
+@use '../../../Styles/Fonts.scss' as Font;
+@use '../../../Styles/Formats.scss' as Format;
+
+.Index{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  .Apresentation{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 50px;
+
+    .Container{
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      .Video{
+        position: absolute;
+        top: 15%;
+        right: 5.5px;
+        width: 50%;
+        height: 70%;
+        z-index: 1;
+        outline: 8px solid Color.$secundary_color_dark;
+        border-radius: Format.$border_radius;
+        box-shadow: Format.$box_shadow;
+
+        video{
+          width: 100%;
+          height: 100%;
+          overflow: clip;
+          object-fit: cover;
+        }
+      }
+
+      .Company_Info{
+        position: absolute;
+        top: 15%;
+        left: 5.5px;
+        width: 50%;
+        height: 70%;
+        z-index: 1;
+        display: flex;
+        justify-content: left;
+        text-align: center;
+
+        .Contente{
+          position: relative;
+          width: 95%;
+          display: flex;
+          flex-direction: column;
+          align-items: left;
+          text-align: left;
+          gap: 20px;
+          text-align: center;
+
+          span:nth-child(1){
+            font-family: Font.$font_family_poppins;
+            font-weight: 600;
+            font-size: 45px;
+            letter-spacing: 2px;
+            color: Color.$yellow;
+          }
+
+          span:nth-child(2){
+            font-family: Font.$font_family_poppins;
+            font-weight: 600;
+            font-size: 20px;
+            letter-spacing: 2px;
+            color: Color.$white;
+          }
+
+          span:nth-child(3){
+            font-family: Font.$font_family_open_sans;
+            font-weight: 500;
+            font-size: 18px;
+            letter-spacing: 2px;
+            color: Color.$gray;
+          }
+
+          .Buttons{
+            position: relative;
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+
+            a{
+              position: relative;
+              text-decoration: none;
+              font-family: Font.$font_family_open_sans;
+              font-weight: 600;
+              font-size: 15px;
+              letter-spacing: 1px;
+              border-radius: Format.$border_radius;
+              padding: 10px;
+              width: 100%;
+              text-align: center;
+            }
+
+            a:nth-child(1){
+              background-color: Color.$white;
+              color: Color.$primary_color_dark;
+            }
+
+            a:nth-child(2){
+              background-color: Color.$yellow;
+              color: Color.$primary_color_dark;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .Teste{
+    position: relative;
+    width: 100%;
+    height: 10vh;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 50px;
+    background-color: Color.$white;
+    display: flex;
+    align-items: center;
+
+    span{
+      background-color: white;
+    }
+  }
+
+  .Teste2{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 50px;
+    background-color: green;
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (max-width: 1600px){
+
+  .Apresentation{
+    padding: 100px 50px 50px 50px !important;
+
+    .Container{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .Video{
+        width: 100% !important;
+        height: 40% !important;
+        position: relative !important;
+        top: 0 !important;
+        right: 0 !important;
+        outline: 5px solid Color.$secundary_color_dark !important;
+
+        video{
+          width: 100%;
+          height: 100% !important;
+          overflow: clip;
+          object-fit: cover;
+        }
+      }
+
+      .Company_Info{
+        width: 100% !important;
+        height: 60% !important;
+        position: relative !important;
+        top: 0 !important;
+        right: 0 !important;
+
+        .Contente{
+
+          span:nth-child(1){
+            font-size: 35px !important;
+          }
+
+          span:nth-child(2){
+            font-size: 20px !important;
+          }
+
+          span:nth-child(3){
+            font-size: 17px !important;
+          }
+        }
+      }
+    }
+  }
+}

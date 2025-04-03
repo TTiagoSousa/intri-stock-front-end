@@ -1,0 +1,72 @@
+@use '../../../Styles/Colors.scss' as Color;
+@use '../../../Styles/Fonts.scss' as Font;
+@use '../../../Styles/Formats.scss' as Format;
+
+.Header_Index {
+  position: fixed;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 100px);
+  z-index: 2;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  border-radius: Format.$border_radius;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: Color.$tertiary_color_dark;
+  box-shadow: Format.$box_shadow;
+
+  &.visible {
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 1;
+  }
+
+  &.hidden {
+    transform: translateX(-50%) translateY(-200%);
+    opacity: 1;
+  }
+
+  div:nth-child(1){
+
+    .Title{
+      font-family: Font.$font_family_poppins;
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: 2px;
+      color: Color.$white;
+    }
+  }
+
+  div:nth-child(2){
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    a{
+      text-decoration: none;
+      font-family: Font.$font_family_poppins;
+      font-weight: 600;
+      padding: 5px 10px 5px 10px; 
+      border-radius: Format.$border_radius;
+      font-size: 13px;
+    }
+
+    .Sign_in_Button{
+      background-color: Color.$primary_color_dark !important;
+      color: Color.$white !important;
+    }
+
+    .Sign_up_Button{
+      background-color: Color.$white !important; 
+      color: Color.$primary_color_dark !important;
+    }
+
+    .Buttons{
+      width: 25px;
+      height: 25px;
+    }
+  }
+}

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import App from './App.jsx';
 import './i18n/index.js';
+import { ThemeProvider } from './Contexts/Theme_Context.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -12,7 +13,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         v7_relativeSplatPath: true,
       }}
     >
-      <App />
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
     </BrowserRouter>
   </StrictMode>
 );

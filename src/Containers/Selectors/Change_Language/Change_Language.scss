@@ -1,0 +1,200 @@
+@use '../../../Styles/Colors.scss' as Color;
+@use '../../../Styles/Fonts.scss' as Font;
+@use '../../../Styles/Formats.scss' as Format;
+
+.Change_Language{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+
+  button{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    .Icon{
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .Language_Options{
+    position: absolute;
+    width: 200px;
+    top: 160%;
+    right: 0px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: Format.$box_shadow;
+
+    &.active{
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &.inactive{
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .Language_Selector{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 5px;
+      box-sizing: border-box;
+
+      .Title{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        span{
+          font-family: Font.$font_family_poppins;
+          font-weight: 600;
+          font-size: 15px;
+        }
+      }
+
+      ul{
+        list-style: none;
+        display: flex;
+        width: 100%;
+        height: 200px;
+        overflow-y: scroll;
+        flex-direction: column;
+        gap: 3px;
+
+        &::-webkit-scrollbar {
+          width: 5px;
+        }
+        
+        &::-webkit-scrollbar-thumb {
+          border-radius: 10px;
+        }
+
+        li{
+          cursor: pointer;
+          width: 99%;
+          height: auto;
+          box-sizing: border-box;
+          padding: 5px;
+          border-radius: 5px;
+          display: flex;
+          align-items: center;
+          text-align: center;
+          justify-content: center;
+
+          span{
+            font-family: Font.$font_family_poppins;
+            font-weight: 600;
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.Dark_Mode{
+
+  .Change_Language{
+
+    .Language_Options{
+      background-color: Color.$secundary_color_dark;
+      border: Format.$border_dark;
+
+      .Language_Selector{
+
+        .Title{
+
+          span{
+            color: Color.$yellow;
+          }
+        }
+
+        ul{
+          
+          &::-webkit-scrollbar-track {
+            background-color: Color.$secundary_color_dark;
+            
+          }
+          
+          &::-webkit-scrollbar-thumb {
+            background-color: Color.$primary_color_dark;
+          }
+
+          li{
+
+            &:hover{
+              background-color: Color.$primary_color_dark;
+
+              span{
+                color: Color.$yellow;
+              }
+            }
+
+            span{
+              color: Color.$gray;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.Light_Mode{
+
+  .Change_Language{
+
+    .Language_Options{
+      background-color: Color.$secundary_color_light;
+      border: Format.$border_light;
+
+      .Language_Selector{
+
+        .Title{
+
+          span{
+            color: Color.$yellow;
+          }
+        }
+
+        ul{
+          
+          &::-webkit-scrollbar-track {
+            background-color: Color.$secundary_color_light;
+            
+          }
+          
+          &::-webkit-scrollbar-thumb {
+            background-color: Color.$secundary_color_light;
+          }
+
+          li{
+
+            &:hover{
+              background-color: Color.$primary_color_light;
+
+              span{
+                color: Color.$yellow;
+              }
+            }
+
+            span{
+              color: Color.$black;
+            }
+          }
+        }
+      }
+    }
+  }
+}
