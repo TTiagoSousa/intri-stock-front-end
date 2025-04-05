@@ -12,7 +12,7 @@ function App() {
       <Routes>
 
         <Route index element={<Public_Page.Index />} />
-        <Route path='Sign_Up' element={ authenticated ? <Navigate to="/" /> :  <Public_Page.Sign_Up /> } />
+        <Route path='Auth' element={ authenticated ? <Navigate to="/" /> :  <Public_Page.Auth /> } />
 
       </Routes>
     </main>

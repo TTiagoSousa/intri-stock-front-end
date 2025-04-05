@@ -18,6 +18,8 @@
     "Passwords do not match" : "Passwords do not match",
     "Password is too weak" : "Password is too weak",
     "Password cannot be similar to the email address" : "Password cannot be similar to the email address",
-    "All fields are required" : "All fields are required"
+    "All fields are required" : "All fields are required",
+    "One of us ?" : "One of us?",
+    "New here ? " : "New here?"
   }
 }

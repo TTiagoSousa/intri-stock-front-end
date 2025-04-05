@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './Index.scss';
 import Header_Index from '../../../Containers/Headers/Header_Index/Header_Index';
 import * as Video from '../../../Imports/video';
 import * as Image from '../../../Imports/images';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router';
-import axios from 'axios';
 
 const Index = () => {
 
