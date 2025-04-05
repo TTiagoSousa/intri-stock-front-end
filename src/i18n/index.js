@@ -1,18 +1,27 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
+
 import enJson from './Translations/en.json';
 import ptJson from './Translations/pt.json';
 
-const storedLanguage = localStorage.getItem('language');
+i18n
+  .use(LanguageDetector) 
+  .use(initReactI18next)
+  .init({
+    fallbackLng: 'pt', 
+    interpolation: {
+      escapeValue: false
+    },
+    resources: {
+      en: enJson,
+      pt: ptJson
+    },
+    detection: {
+      order: ['localStorage', 'navigator'],
+      lookupLocalStorage: 'language',
+      caches: ['localStorage'],
+    }
+  });
 
-i18n.use(initReactI18next).init({
-  fallbackLng: storedLanguage || 'pt',
-  interpolation: {
-
-    escapeValue: false
-  },
-  resources: {
-    en: enJson,
-    pt: ptJson
-  }
-});
+export default i18n;
