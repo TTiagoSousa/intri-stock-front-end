@@ -1,0 +1,25 @@
+{
+  "translation": {
+    "Sign in": "Entrar",
+    "Sign up": "Resgistar",
+    "Turn data into decisions": "Transforma dados em decisões",
+    "Analyze the market like the pros — with Intri Stock by your side.": "Analisa o mercado como os profissionais — com a Intri Stock ao teu lado.",
+    "Because good investing doesn't depend on luck, but on clear, objective, and accessible information — and that's exactly what Intri Stock offers you.": "Porque investir bem não depende de sorte, mas de informação clara, objetiva e acessível — e é exatamente isso que a Intri Stock te oferece.",
+    "Email" : "Email",
+    "Password" : "Palavra-passe",
+    "Repete password" : "Repetir a palavra-passe",
+    "Accept the terms" : "Aceitar os termos",
+    "Check terms" : "Vizualizar termos",
+    "Already have a account ? -" : "Ainda não tens conta ?",
+    "Click here" : "Clique aqui",
+    "Invalid email address": "Endereço de e-mail inválido",
+    "Disposable emails are not allowed": "Endereços de e-mail descartáveis não são permitidos",
+    "Email already exists": "O e-mail já existe",
+    "Passwords do not match": "As palavras-passe não coincidem",
+    "Password is too weak": "A palavra-passe é demasiado fraca",
+    "Password cannot be similar to the email address": "A palavra-passe não pode ser semelhante ao endereço de e-mail",
+    "All fields are required": "Todos os campos são obrigatórios",
+    "One of us ?" : "Um de nós ?",
+    "New here ?" : "Novo aqui ?"
+  }
+}

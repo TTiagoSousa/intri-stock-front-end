@@ -1,0 +1,25 @@
+{
+  "translation": {
+    "Sign in": "Sign in",
+    "Sign up": "Sign up",
+    "Turn data into decisions": "Turn data into decisions",
+    "Analyze the market like the pros — with Intri Stock by your side.": "Analyze the market like the pros — with Intri Stock by your side.",
+    "Because good investing doesn't depend on luck, but on clear, objective, and accessible information — and that's exactly what Intri Stock offers you.": "Because good investing doesn't depend on luck, but on clear, objective, and accessible information — and that's exactly what Intri Stock offers you.",
+    "Email" : "Email",
+    "Password" : "Password",
+    "Repete password" : "Repete password",
+    "Accept the terms" : "Accept the terms",
+    "Check terms" : "Check terms",
+    "Already have a account ? -" : "Already have a account ?",
+    "Click here" : "Click here",
+    "Invalid email address" : "Invalid email address",
+    "Disposable emails are not allowed" : "Disposable emails are not allowed",
+    "Email already exists" : "Email already exists",
+    "Passwords do not match" : "Passwords do not match",
+    "Password is too weak" : "Password is too weak",
+    "Password cannot be similar to the email address" : "Password cannot be similar to the email address",
+    "All fields are required" : "All fields are required",
+    "One of us ?" : "One of us?",
+    "New here ? " : "New here?"
+  }
+}
