@@ -5,13 +5,14 @@ import { validateEmail } from '../../Utils/email/is.valide.email';
 import { isPasswordStrong } from '../../Utils/password/is.password.strong';
 import { End_Points } from '../../Services/endPoints';
 import { useNavs } from "../../Contexts/Navs_Context";
+import i18n from 'i18next';
 
 export const useSignup = () => {
 
   const { t } = useTranslation();
-
+  const language = i18n.language;
   const { setAlert } = useNavs();
-  
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -76,6 +77,7 @@ export const useSignup = () => {
         email,
         password,
         confirmPassword,
+        language 
       });
 
       setAlert({
