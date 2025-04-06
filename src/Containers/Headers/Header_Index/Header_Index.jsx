@@ -37,7 +37,7 @@ const Header_Index = () => {
     <div className={`Header_Index ${showHeader ? 'visible' : 'hidden'}`}>
       <div>
         <div className="Title">
-          <span>Intri Stock</span>
+          <span>IntriStock</span>
         </div>
       </div>
       <div>

@@ -2,7 +2,6 @@ import React from 'react';
 import './Index.scss';
 import Header_Index from '../../../Containers/Headers/Header_Index/Header_Index';
 import * as Video from '../../../Imports/video';
-import * as Image from '../../../Imports/images';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router';
 
@@ -18,11 +17,6 @@ const Index = () => {
 
       <div className="Apresentation">
         <div className='Container'>
-          <div className='Video'>
-            <video autoPlay loop muted>
-              <source src={Video.Presentation_Video} type='video/mp4'/>
-            </video>
-          </div>
           <div className='Company_Info'>
             <div className="Contente">
               <span>{t("Turn data into decisions")}</span>
@@ -32,6 +26,13 @@ const Index = () => {
                 <Link>{t("Get started for free")}</Link>
                 <Link>{t("View our plans")}</Link>
               </div>
+            </div>
+          </div>
+          <div className='Video'>
+            <div>
+              <video autoPlay loop muted>
+                <source src={Video.Presentation_Video} type='video/mp4'/>
+              </video>
             </div>
           </div>
         </div>

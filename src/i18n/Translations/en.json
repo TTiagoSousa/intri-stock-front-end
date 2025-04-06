@@ -20,6 +20,8 @@
     "Password cannot be similar to the email address" : "Password cannot be similar to the email address",
     "All fields are required" : "All fields are required",
     "One of us ?" : "One of us?",
-    "New here ? " : "New here?"
+    "New here ? " : "New here?",
+    "Get started for free" : "Get started for free",
+    "View our plans" : "View our plans"
   }
 }
