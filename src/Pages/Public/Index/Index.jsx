@@ -30,7 +30,10 @@ const Index = () => {
           </div>
           <div className='Video'>
             <div>
-              <video autoPlay loop muted>
+              <video   autoPlay
+                loop
+                muted
+                playsInline>
                 <source src={Video.Presentation_Video} type='video/mp4'/>
               </video>
             </div>
