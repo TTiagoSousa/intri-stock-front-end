@@ -69,9 +69,6 @@ export const useSignup = () => {
       return;
     }
 
-
-    console.log('Entrou')
-
     try {
       const response = await http.post(End_Points.Sing_Up_Endpoint(), {
         email,
