@@ -13,7 +13,7 @@ const Simple_Alert = () => {
         severity: alert.type,
         summary: alert.type.charAt(0).toUpperCase() + alert.type.slice(1),
         detail: alert.message,
-        life: 1000,
+        life: 2000,
       });
       // Reseta o alerta após exibir
       setAlert({ ...alert, open: false });

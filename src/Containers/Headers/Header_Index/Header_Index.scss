@@ -32,7 +32,7 @@
   div:nth-child(1){
 
     .Title{
-      font-family: Font.$font_family_poppins;
+      font-family: Font.$font_family_roboto;
       font-weight: 600;
       font-size: 18px;
       letter-spacing: 2px;
@@ -41,32 +41,79 @@
   }
 
   div:nth-child(2){
+    height: 100%;
     display: flex;
     gap: 10px;
     align-items: center;
 
     a{
       text-decoration: none;
-      font-family: Font.$font_family_poppins;
+      font-family: Font.$font_family_roboto;
       font-weight: 600;
-      padding: 5px 10px 5px 10px; 
+      width: 70px;
       border-radius: Format.$border_radius;
       font-size: 13px;
+      text-align: center;
     }
 
     .Sign_in_Button{
       background-color: Color.$primary_color_dark !important;
       color: Color.$white !important;
+      padding: 10px;
     }
 
     .Sign_up_Button{
       background-color: Color.$white !important; 
       color: Color.$primary_color_dark !important;
+      padding: 9px;
     }
 
     .Buttons{
       width: 25px;
       height: 25px;
     }
+  }
+}
+
+@media (max-width: 700px){
+
+  .Header_Index {
+
+    div:nth-child(1){
+
+      .Title{
+        font-family: Font.$font_family_roboto;
+        font-size: 14px;
+        letter-spacing: 1px;
+      }
+    }
+
+    div:nth-child(2){
+  
+      a{
+        width: 55px;
+        font-size: 10px;
+      }
+  
+      .Sign_in_Button{
+        padding: 7px;
+      }
+  
+      .Sign_up_Button{
+        padding: 5px;
+      }
+  
+      .Buttons{
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px){
+
+  .Header_Index {
+    width: calc(100% - 15px);
   }
 }

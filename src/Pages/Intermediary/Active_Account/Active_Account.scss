@@ -1,0 +1,67 @@
+@use '../../../Styles/Colors.scss' as Color;
+@use '../../../Styles/Fonts.scss' as Font;
+@use '../../../Styles/Formats.scss' as Format;
+
+.Active_Account{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  text-align: center;
+  letter-spacing: 3px;
+
+  h1, h2, span{
+    font-family: Font.$font_family_roboto;
+    font-size: 60px;
+  }
+
+  h1{
+    color: Color.$blue;
+  }
+
+  h2, span{
+    color: Color.$blue;
+  }
+
+  .Sub_Tittle{
+    display: flex;
+    align-items: baseline;
+    
+    div{
+      display: flex;
+      gap: 10px;
+      margin-left: 10px;
+    }
+  }
+}
+
+@media (max-width: 900px){
+  .Active_Account{
+
+    h1, h2, span {
+      font-size: 55px;
+    }
+  }
+}
+
+@media (max-width: 800px){
+  .Active_Account{
+
+    h1, h2, span {
+      font-size: 50px;
+    }
+  }
+}
+
+@media (max-width: 800px){
+  .Active_Account{
+
+    h1, h2, span {
+      font-size: 45px;
+    }
+  }
+}

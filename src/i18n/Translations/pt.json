@@ -20,6 +20,8 @@
     "Password cannot be similar to the email address": "A palavra-passe não pode ser semelhante ao endereço de e-mail",
     "All fields are required": "Todos os campos são obrigatórios",
     "One of us ?" : "Um de nós ?",
-    "New here ?" : "Novo aqui ?"
+    "New here ?" : "Novo aqui ?",
+    "Get started for free" : "Começa grátis",
+    "View our plans" : "Vê os nossos planos"
   }
 }

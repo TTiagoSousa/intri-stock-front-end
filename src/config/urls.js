@@ -1,4 +1,3 @@
-// const BASE_URL = 'https://control-everything-database.onrender.com/';
-const BASE_URL = 'http://192.168.0.212:3000/';
+const BASE_URL = 'http://169.254.83.107:3000/';
 
 export { BASE_URL };
