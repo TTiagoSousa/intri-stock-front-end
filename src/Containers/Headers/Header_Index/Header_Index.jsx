@@ -15,7 +15,6 @@ const Header_Index = () => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
 
-      // Se a posição atual for maior que a última, significa que está rolando para BAIXO
       if (currentScrollPos > lastScrollPos) {
         setShowHeader(false);
       } else {
@@ -34,7 +33,7 @@ const Header_Index = () => {
   }, [lastScrollPos]);
 
   return (
-    <div className={`Header_Index ${showHeader ? 'visible' : 'hidden'}`}>
+    <div className="Header_Index">
       <div>
         <div className="Title">
           <span>IntriStock</span>
