@@ -1,0 +1,140 @@
+@use '../../../Styles/Colors.scss' as Color;
+@use '../../../Styles/Fonts.scss' as Font;
+@use '../../../Styles/Formats.scss' as Format;
+
+.Simple_Model {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+
+  &.Show{
+    opacity: 1;
+    pointer-events: auto;
+
+    .Model_Container{
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  &.Hide{
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .Model_Container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    overflow-y: auto;
+    position: relative;
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+    
+    .Model_Header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      span{
+        width: 100%;
+        font-family: Font.$font_family_roboto;
+        font-weight: 600;
+        font-size: 20px;
+      }
+
+      button{
+        background-color: Color.$blue;
+        border: none;
+        width: 25px;
+        height: 25px;
+        font-family: Font.$font_family_roboto;
+        font-weight: 500;
+        color: Color.$white;
+        border-radius: 5px;
+      }
+    }
+
+    .Model_Content{
+      max-height: 400px;
+      overflow: hidden;
+      overflow-y: scroll;
+      text-align: justify;
+
+      span{
+        width: 100%;
+        font-family: Font.$font_family_roboto;
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 800px){
+
+  .Simple_Model {
+  
+    .Model_Container {
+      padding: 20px;
+      gap: 20px;
+      
+      .Model_Header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+  
+        span{
+          font-size: 18px;
+        }
+      }
+  
+      .Model_Content{
+        max-height:500px;
+  
+        span{
+          font-size: 14px;
+        }
+      }
+    }
+  }  
+}
+
+@media (max-width: 500px){
+
+  .Simple_Model {
+  
+    .Model_Container {
+      
+      .Model_Header{
+  
+        span{
+          font-size: 17px;
+        }
+      }
+  
+      .Model_Content{
+  
+        span{
+          font-size: 13px;
+        }
+      }
+    }
+  }  
+}
