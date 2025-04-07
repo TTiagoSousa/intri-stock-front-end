@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 import Simple_Alert from '../../../Components/Alerts/Simple_Alert/Simple_Alert';
 import { useSignup } from '../../../Hooks/Auth/useSignup';
 import { useLocation } from 'react-router';
+import Simple_Model from '../../../Components/Models/Simple_Model/Simple_Model';
 
 const Auth = () => {
 
@@ -51,12 +52,21 @@ const Auth = () => {
   // Disable button if any field is empty or while loading
   const isDisabled = !email || !password || !confirmPassword || !terms || isLoading;
 
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div className={`Auth ${isSignUp ? 'sign-up-mode' : ''}`}>
 
       <div className='Alert'>
         <Simple_Alert  />
       </div>
+
+      <Simple_Model 
+        visible={showModal}
+        setVisible={setShowModal}
+        title="Termos e Condições"
+        content="Ao continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condiçõesAo continuar a utilizar esta aplicação, aceita os nossos termos e condições."
+      />
 
       <div className="Forms_Container">
         <div className="Signin_Signup">
@@ -70,6 +80,7 @@ const Auth = () => {
             <div className="Input_Field">
               <Simple_Input_And_Lable 
                 label_text={t('Password')}
+                type="password"
               />
             </div>
             <div className='Button_Field'>
@@ -93,6 +104,7 @@ const Auth = () => {
                 label_text={t('Password')}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                type="password"
               />
             </div>
             <div className="Input_Field">
@@ -100,6 +112,7 @@ const Auth = () => {
                 label_text={t('Repete password')}
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
+                type="password"
               />
             </div>
             <div className="Check_Field">
@@ -111,7 +124,7 @@ const Auth = () => {
                 <span>{t('Accept the terms')}</span>
               </div>
               <div>
-                <span>{t("Check terms")}</span>
+                <span onClick={() => setShowModal(true)}>{t("Check terms")}</span>
               </div>
             </div>
             <div className='Button_Field'>
