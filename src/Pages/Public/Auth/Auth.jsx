@@ -70,6 +70,7 @@ const Auth = () => {
             <div className="Input_Field">
               <Simple_Input_And_Lable 
                 label_text={t('Password')}
+                type="password"
               />
             </div>
             <div className='Button_Field'>
@@ -93,6 +94,7 @@ const Auth = () => {
                 label_text={t('Password')}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                type="password"
               />
             </div>
             <div className="Input_Field">
@@ -100,6 +102,7 @@ const Auth = () => {
                 label_text={t('Repete password')}
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
+                type="password"
               />
             </div>
             <div className="Check_Field">

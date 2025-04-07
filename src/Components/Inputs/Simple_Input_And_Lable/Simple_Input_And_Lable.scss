@@ -31,6 +31,16 @@
         background: none;
       }
     }
+
+    .Icon {
+      position: absolute;
+      width: 7%;
+      height: 90%;
+      right: 0%;
+      top: 68%;
+      transform: translate(-30%, -50%);
+      cursor: pointer;
+    }
   }
   
 .Dark_Mode{
