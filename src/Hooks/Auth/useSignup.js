@@ -74,7 +74,8 @@ export const useSignup = () => {
         email,
         password,
         confirmPassword,
-        language 
+        language,
+        terms
       });
 
       setAlert({
