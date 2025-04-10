@@ -1,44 +1,40 @@
+// httpService.js
+
 import axios from "axios";
 import { BASE_URL } from "../config/urls";
-import Cookies from 'js-cookie';
 
-// Create an Axios instance with a base URL
 const http = axios.create({
   baseURL: BASE_URL,
+  withCredentials: true,
 });
 
-// Add a request interceptor to the Axios instance
-http.interceptors.request.use(
-  config => {
-
-    // Get the token from cookies
-    const token = Cookies.get('rthtrh3445gv@@firnf1rgher');
-
-    // If the token exists, add it to the Authorization header
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
-    }
-    
-    // Return the modified config
-    return config;
-  },
-  error => {
-
-    // Return the error if something goes wrong with the request
-    return Promise.reject(error);
-  }
-);
-
-// Add a response interceptor to the Axios instance
 http.interceptors.response.use(
   response => {
-
-    // Simply return the response if successful
+    console.log("📥 [Axios] Resposta recebida:", response.config.url);
     return response;
   },
   error => {
+    const status = error.response?.status;
+    const fullUrl = error.config?.url || '';
+    const normalizedUrl = fullUrl.replace(BASE_URL, ''); // tira a parte do domínio
 
-    // Return the error if something goes wrong with the response
+    // ⛔ Ignorar silenciosamente erro 401 no /user/me
+    if (status === 401 && normalizedUrl === '/user/me') {
+      console.log("ℹ️ [Axios] Ignorado 401 esperado em /user/me");
+      return Promise.reject(error);
+    }
+
+    // 👇 Outros tratamentos
+    if (status === 401) {
+      // console.warn("🔒 Não autorizado.");
+    } else if (status === 429) {
+      // console.warn("⏳ Muitas requisições!");
+    } else if (status >= 500) {
+      // console.warn("💥 Erro do servidor.");
+    } else {
+      // console.error(`❌ [Axios] Erro [${status}] em: ${fullUrl}`);
+    }
+
     return Promise.reject(error);
   }
 );

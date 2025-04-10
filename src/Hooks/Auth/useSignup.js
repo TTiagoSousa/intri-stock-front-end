@@ -13,14 +13,14 @@ export const useSignup = () => {
   const language = i18n.language;
   const { setAlert } = useNavs();
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [terms, setTerms] = useState(false);
+  const [signUpEmail, setSignUpEmail] = useState('');
+  const [signUpPassword, setSignUpPassword] = useState('');
+  const [signUpConfirmPassword, setSignUpConfirmPassword] = useState('');
+  const [signUpTerms, setSignUpTerms] = useState(false);
 
   const signup = async () => {
 
-    if (!email || !password || !confirmPassword) {
+    if (!signUpEmail || !signUpPassword || !signUpConfirmPassword) {
       setAlert({
         open: true,
         message: t("All fields are required"),
@@ -30,7 +30,7 @@ export const useSignup = () => {
       return;
     }
 
-    if (!validateEmail(email)) {
+    if (!validateEmail(signUpEmail)) {
       setAlert({
         open: true,
         message: t("Invalid email address"),
@@ -40,7 +40,7 @@ export const useSignup = () => {
       return;
     }
 
-    if (!isPasswordStrong(password)) {
+    if (!isPasswordStrong(signUpPassword)) {
       setAlert({
         open: true,
         message: t("Password is too weak"),
@@ -50,7 +50,7 @@ export const useSignup = () => {
       return;
     }
 
-    if (password !== confirmPassword) {
+    if (signUpPassword !== signUpConfirmPassword) {
       setAlert({
         open: true,
         message: t("Passwords do not match"),
@@ -60,7 +60,7 @@ export const useSignup = () => {
       return;
     }
 
-    if (!terms) {
+    if (!signUpTerms) {
       setAlert({
         open: true,
         message: t("You must accept the terms and conditions"),
@@ -71,11 +71,11 @@ export const useSignup = () => {
 
     try {
       const response = await http.post(End_Points.Sing_Up_Endpoint(), {
-        email,
-        password,
-        confirmPassword,
-        language,
-        terms
+        email: signUpEmail,
+        password: signUpPassword,
+        confirmPassword: signUpConfirmPassword,
+        language: language,
+        terms: signUpTerms
       });
 
       setAlert({
@@ -107,9 +107,9 @@ export const useSignup = () => {
 
   return {
     signup,
-    email, setEmail,
-    password, setPassword,
-    confirmPassword, setConfirmPassword,
-    terms, setTerms
+    signUpEmail, setSignUpEmail,
+    signUpPassword, setSignUpPassword,
+    signUpConfirmPassword, setSignUpConfirmPassword,
+    signUpTerms, setSignUpTerms
   };
 };
