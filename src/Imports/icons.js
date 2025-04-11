@@ -3,3 +3,7 @@ export { default as Moon_N1 } from '../Assets/Icons/Moon/Moon_N1';
 export { default as Sun_N1 } from '../Assets/Icons/Sun/Sun_N1';
 export { default as Close_Eye } from '../Assets/Icons/Eye/CLose_Eye';
 export { default as Open_Eye } from '../Assets/Icons/Eye/Open_Eye';
+export { default as Chart_Bar } from '../Assets/Icons/Chart/Chart_Bar';
+export { default as Book_Minimalistic } from '../Assets/Icons/Book/Book_Minimalistic';
+export { default as Justice_Analyze_Balance_Compare } from '../Assets/Icons/Balance/Justice_Analyze_Balance_Compare';
+export { default as Academy_Cap } from '../Assets/Icons/Academy/Academy_Cap';

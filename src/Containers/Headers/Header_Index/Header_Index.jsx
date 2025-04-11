@@ -3,10 +3,13 @@ import './Header_Index.scss';
 import { Link } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import Change_Language from '../../Selectors/Change_Language/Change_Language';
+import { useAuth } from '../../../Contexts/Auth_Context';
 
 const Header_Index = () => {
 
   const { t } = useTranslation();
+
+  const { authenticated, isLoading } = useAuth();
 
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollPos, setLastScrollPos] = useState(0);
@@ -43,8 +46,18 @@ const Header_Index = () => {
         <div className="Buttons">
           <Change_Language />
         </div>
-        <Link className='Sign_in_Button' to="Auth">{t("Sign in")}</Link>
-        <Link className='Sign_up_Button' to='Auth' state={{ signup: true }}>{t("Sign up")}</Link>
+        {!isLoading && (
+          authenticated ? (
+            <Link className='Dashboard_Button' to="Main">
+              {t("Back to Dashboard")}
+            </Link>
+          ) : (
+            <>
+              <Link className='Sign_in_Button' to="Auth">{t("Sign in")}</Link>
+              <Link className='Sign_up_Button' to='Auth' state={{ signup: true }}>{t("Sign up")}</Link>
+            </>
+         )
+        )}
       </div>
     </div>
   )
