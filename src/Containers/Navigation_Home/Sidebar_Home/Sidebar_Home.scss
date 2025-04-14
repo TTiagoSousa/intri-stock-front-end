@@ -1,0 +1,135 @@
+@use '../../../Styles/Colors.scss' as Color;
+@use '../../../Styles/Fonts.scss' as Font;
+@use '../../../Styles/Formats.scss' as Format;
+
+.SideBar_Home{
+  position: fixed;
+  width: 250px;
+  height: 93vh;    
+  margin-top: 5vh;
+  margin-left: 20px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  border-radius: 10px 10px 10px 10px;
+  background-color: #232e3c;
+  transition: width 0.3s ease, opacity 0.3s ease;
+
+  &.close{
+    width: 50px;
+    
+    ul{
+      position: relative;
+
+      li{
+        position: relative;
+
+        a{
+          position: relative;
+          width: 50px;
+
+          .Nav_Text{
+            opacity: 0;
+          }
+
+          .Tooltip{
+            background-color: #232e3c;
+            position: absolute;
+            left: 60px;
+            top: 10%;
+            height: auto;
+            min-width: 150px;
+            border-radius: Format.$border_radius;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 25px;
+            box-shadow: Format.$box_shadow;
+            opacity: 0;
+          }
+
+          &:hover{
+            
+            .Tooltip{
+              opacity: 1;
+              transition: opacity 0.3s ease;
+
+              span{
+                font-family: Font.$font_family_roboto;
+                font-size: 17px;
+                color: Color.$gray;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  ul{
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    li{
+      width: 100%;
+      position: relative;
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+
+      a{
+        position: relative;
+        text-decoration: none;
+        padding: 5px 0px 5px 0px;
+
+        .Icon{
+          position: absolute;
+          width: 50px;
+          height: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          
+          div{
+            width: 25px;
+            top: 0;
+            left: 50%;
+          }
+        }
+
+        .Nav_Text{
+          width: calc(100% - 50px);
+          height: 100%;
+          margin-left: 50px;
+          display: flex;
+          align-items: center;
+          text-align: left;
+
+          span{
+            font-family: Font.$font_family_roboto;
+            font-size: 17px;
+            color: Color.$gray;
+          }
+        }
+      }
+
+      .Tooltip{
+
+        &.hide{
+          display: none;
+        }
+      }
+    }
+  }
+}

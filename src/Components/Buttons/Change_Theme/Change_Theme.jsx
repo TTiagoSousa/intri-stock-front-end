@@ -3,6 +3,7 @@ import './Change_Theme.scss';
 import * as Color from '../../../Styles/Colors';
 import * as Icon from '../../../Imports/icons';
 import { useTheme } from '../../../Contexts/Theme_Context';
+import { getIconColor } from '../../../Styles/hooks/getIconColor';
 
 const Change_Theme = () => {
 
@@ -35,6 +36,8 @@ const Change_Theme = () => {
       ? <Icon.Moon_N1 Global_Color={color} /> 
       : <Icon.Sun_N1 Global_Color={color} />;
   };
+
+  const iconColor = getIconColor(mode, hovered);
 
   return (
     <div className="Change_Theme">

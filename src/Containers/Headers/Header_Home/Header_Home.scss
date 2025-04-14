@@ -1,0 +1,83 @@
+@use '../../../Styles/Colors.scss' as Color;
+@use '../../../Styles/Fonts.scss' as Font;
+@use '../../../Styles/Formats.scss' as Format;
+
+.Header_Home{
+  position: fixed;
+  width: 100%;
+  box-sizing: border-box;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+  box-sizing: border-box;
+
+  &.Sidebar_Home{
+    padding: 20px 20px 20px 20px;
+  }
+
+  &.Mobile_Menu{
+    padding: 10px 10px 10px 10px;
+  }
+
+  .Left_Side{
+    display: flex;
+    align-items: center;
+
+    .Logo{
+      width: 100%;
+      height: 100%;
+
+      img{
+        width: 200px;
+        height: 100%;
+      }
+    }
+
+    .Menu{
+      width: 25px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &.With_SideBar{
+        display: none;
+      }
+
+      button{
+        width: auto;
+        height: 100%;
+        background: none;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 4px;
+        cursor: pointer;
+
+        div{
+          background-color: Color.$gray;
+          width: 20px;
+          height: 2px;
+        }
+      }
+    }
+  }
+
+  .Right_Side{
+    display: flex;
+    gap: 10px;
+
+    .Buttons_Field{
+      width: 25px;
+      height: 25px;
+      
+      .Icon_Settings{
+        cursor: pointer;
+      }
+    }
+  }
+}

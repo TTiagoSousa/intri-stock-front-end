@@ -6,7 +6,8 @@ const Private_Routes = () => {
   return (
     <>
       <Routes>
-        <Route index element={ <div>Tiago</div> }/>
+        <Route index element={ <Private_Page.Dashboard /> }/>
+        <Route path='Dashboard' element={ <Private_Page.Dashboard /> }/>
       </Routes>
     </>
   )

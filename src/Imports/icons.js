@@ -7,3 +7,7 @@ export { default as Chart_Bar } from '../Assets/Icons/Chart/Chart_Bar';
 export { default as Book_Minimalistic } from '../Assets/Icons/Book/Book_Minimalistic';
 export { default as Justice_Analyze_Balance_Compare } from '../Assets/Icons/Balance/Justice_Analyze_Balance_Compare';
 export { default as Academy_Cap } from '../Assets/Icons/Academy/Academy_Cap';
+export { default as Dashboard_Cubes } from '../Assets/Icons/Dashboard/Dashboard_Cubes';
+export { default as GLobal_SVG } from '../Assets/Icons/GLobal_SVG';
+export { default as Settings } from '../Assets/Icons/Settings/Settings';
+export { default as Painting } from '../Assets/Icons/Painting/Painting';
