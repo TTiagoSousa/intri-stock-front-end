@@ -14,7 +14,7 @@
   box-sizing: border-box;
 
   &.Sidebar_Home{
-    padding: 20px 20px 20px 20px;
+    padding: 20px 20px 20px 30px;
   }
 
   &.Mobile_Menu{
@@ -79,5 +79,13 @@
         cursor: pointer;
       }
     }
+  }
+}
+
+.Dark_Mode{
+  
+  .Header_Home{
+    background-color: Color.$primary_color_dark;
+    color: Color.$white;
   }
 }

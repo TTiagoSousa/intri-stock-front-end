@@ -37,18 +37,7 @@ const Header_Home = () => {
       {/* <button onClick={showSidebar_Home}> Mobile button</button> */}
       <div className="Left_Side">
         <div className='Menu'>
-          {
-            typeOfNavifation === 'Sidebar_Home' ? (
-              <div className="Hamburger">
-                <Hamburger 
-                  toggled={sidebar_Home}
-                  toggle={setSidebar_Home}
-                  size={20}
-                  color={Color.gray}
-                />
-              </div>
-            ) :
-            typeOfNavifation === 'Mobile_Menu' ?  (
+          { typeOfNavifation === 'Mobile_Menu' ?  (
               <button
                 onClick={show_Mobile_Sidebar_Home}
               >

@@ -12,7 +12,7 @@ const Sidebar_Home = () => {
   const location = useLocation();
 
   return (
-    <nav className={`SideBar_Home ${sidebar_Home ? '' : 'close'}`}>
+    <nav className="SideBar_Home">
       <React.Fragment>
         <ul className='Nav_Items'>
           {navItems.map((item, index) => (
@@ -27,11 +27,6 @@ const Sidebar_Home = () => {
                 </div>
                 <div className={`Nav_Text ${sidebar_Home ? '' : 'Close_Sidebar'}`}>
                   <span>{item.text}</span>
-                </div>
-                <div className={`Tooltip ${sidebar_Home ? 'hide' : 'show'}`}>
-                  <span>
-                    {item.text}
-                  </span>
                 </div>
               </NavLink>
             </li>

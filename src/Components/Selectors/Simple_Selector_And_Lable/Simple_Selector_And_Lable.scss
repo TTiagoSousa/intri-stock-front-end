@@ -1,0 +1,142 @@
+@use '../../../Styles/Colors.scss' as Color;
+@use '../../../Styles/Fonts.scss' as Font;
+@use '../../../Styles/Formats.scss' as Format;
+
+
+.Simple_Selector_And_Lable {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  label{
+    position: relative;
+    width: 100%;
+    font-family: Font.$font_family_roboto;
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  input{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    border-radius: Format.$border_radius;
+    font-family: Font.$font_family_poppins;
+    box-sizing: border-box;
+    text-align: center;
+    cursor: pointer;
+
+    &:focus{
+      background: none;
+    }
+  }
+
+  .Dropdown{
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    z-index: 2;
+    width: calc(100% - 5px);
+    box-shadow: Format.$box_shadow;
+    border-radius: Format.$border_radius;
+
+    ul{
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 15px;
+      box-sizing: border-box;
+
+      li{
+        list-style: none;
+        font-family: Font.$font_family_roboto;
+        text-align: center;
+        cursor: pointer;
+        padding: 10px;
+        font-weight: 600;
+        border-radius: Format.$border_radius;
+      }
+    }
+  }
+}
+
+.Dark_Mode{
+
+  .Simple_Selector_And_Lable{
+    
+    label{
+      color: Color.$gray;
+    }
+
+    input{
+      background-color: Color.$primary_color_dark;
+      border: 1px solid Color.$gray;
+      color: Color.$gray;
+
+      &:focus{
+        border: 1px solid Color.$blue;
+      }
+    }
+
+    .Dropdown{
+      background-color: Color.$tertiary_color_dark;
+      border: Format.$border_dark;
+
+      ul{
+
+        li{
+          color: Color.$gray;
+          
+          &:hover{
+            background-color: Color.$secundary_color_dark;
+            color: Color.$blue;
+            transition: 0.5s;
+          }
+        }
+      }
+    }
+  }
+}
+
+.Light_Mode{
+
+  .Simple_Selector_And_Lable{
+    
+    label{
+      color: Color.$black;
+    }
+
+    input{
+      background-color: Color.$primary_color_light;
+      border: 1px solid Color.$black;
+      color: Color.$black;
+
+      &:focus{
+        border: 1px solid Color.$blue;
+      }
+    }
+
+    .Dropdown{
+      background-color: Color.$tertiary_color_light;
+      border: Format.$border_dark;
+
+      ul{
+
+        li{
+          color: Color.$black;
+          
+          &:hover{
+            background-color: Color.$secundary_color_light;
+            color: Color.$blue;
+            transition: 0.5s;
+          }
+        }
+      }
+    }
+  }
+}

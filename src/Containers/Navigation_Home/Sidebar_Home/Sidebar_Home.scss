@@ -21,57 +21,6 @@
   background-color: #232e3c;
   transition: width 0.3s ease, opacity 0.3s ease;
 
-  &.close{
-    width: 50px;
-    
-    ul{
-      position: relative;
-
-      li{
-        position: relative;
-
-        a{
-          position: relative;
-          width: 50px;
-
-          .Nav_Text{
-            opacity: 0;
-          }
-
-          .Tooltip{
-            background-color: #232e3c;
-            position: absolute;
-            left: 60px;
-            top: 10%;
-            height: auto;
-            min-width: 150px;
-            border-radius: Format.$border_radius;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 25px;
-            box-shadow: Format.$box_shadow;
-            opacity: 0;
-          }
-
-          &:hover{
-            
-            .Tooltip{
-              opacity: 1;
-              transition: opacity 0.3s ease;
-
-              span{
-                font-family: Font.$font_family_roboto;
-                font-size: 17px;
-                color: Color.$gray;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
   ul{
     position: relative;
     width: 100%;
@@ -79,55 +28,33 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+    list-style: none;
 
     li{
       width: 100%;
-      position: relative;
-      width: 100%;
       height: auto;
-      display: flex;
-      flex-direction: column;
 
       a{
-        position: relative;
-        text-decoration: none;
-        padding: 5px 0px 5px 0px;
+        display: flex;
+        gap: 20px;
+        align-items: center;
 
         .Icon{
-          position: absolute;
-          width: 50px;
-          height: auto;
-          display: flex;
-          align-items: center;
-          justify-content: center;
           
           div{
             width: 25px;
-            top: 0;
-            left: 50%;
           }
         }
 
         .Nav_Text{
-          width: calc(100% - 50px);
-          height: 100%;
-          margin-left: 50px;
-          display: flex;
-          align-items: center;
-          text-align: left;
 
           span{
             font-family: Font.$font_family_roboto;
-            font-size: 17px;
+            font-size: 16px;
             color: Color.$gray;
           }
-        }
-      }
-
-      .Tooltip{
-
-        &.hide{
-          display: none;
         }
       }
     }

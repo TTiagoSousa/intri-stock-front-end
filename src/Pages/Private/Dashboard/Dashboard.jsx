@@ -4,7 +4,7 @@ import './Dashboard.scss';
 const Dashboard = () => {
   return (
     <div className='Dashboard'>
-      Teste
+      <section>Tiago</section>
     </div>
   )
 };

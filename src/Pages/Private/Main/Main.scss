@@ -14,8 +14,8 @@
     box-sizing: border-box;
     transition: all 0.3s;
     display: flex;
-    gap: 10px;
-    padding: 10px;
+    padding: 0px 10px 0px 10px;
+    // background-color: red !important;
   }
 
   .Small_Container_With_SideBar_Close {
@@ -28,14 +28,14 @@
     box-sizing: border-box;
     transition: all 0.3s;
     display: flex;
-    gap: 10px;
-    padding: 10px;
+    padding: 0px 10px 0px 10px;
+    // background-color: red !important;
   }
 
   .Container_With_MobileMenu {
     width: 100%;
     height: auto;
-    margin-top: 5vh;
+    margin-top: 3vh;
     transition: 0.3s all;
     display: flex;
     flex-direction: column;
