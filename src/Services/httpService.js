@@ -1,7 +1,5 @@
-// httpService.js
-
 import axios from "axios";
-import { BASE_URL } from "../config/urls";
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 const http = axios.create({
   baseURL: BASE_URL,
