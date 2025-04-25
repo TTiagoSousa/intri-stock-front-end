@@ -5,8 +5,7 @@ import App from './App.jsx';
 import './i18n/index.js';
 import { ThemeProvider } from './Contexts/Theme_Context.jsx';
 import { NavigationProvider } from './Contexts/Navs_Context.jsx';
-import { PrimeReactProvider } from 'primereact/api';
-
+import { AuthProvider } from './Contexts/Auth_Context.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -18,7 +17,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     >
       <ThemeProvider>
         <NavigationProvider>
-          <App />
+          <AuthProvider>
+            <App />
+          </AuthProvider>
         </NavigationProvider>
       </ThemeProvider>
     </BrowserRouter>

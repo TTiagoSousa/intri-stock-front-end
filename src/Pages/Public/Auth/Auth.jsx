@@ -8,6 +8,7 @@ import Simple_Alert from '../../../Components/Alerts/Simple_Alert/Simple_Alert';
 import { useSignup } from '../../../Hooks/Auth/useSignup';
 import { useLocation } from 'react-router';
 import Simple_Model from '../../../Components/Models/Simple_Model/Simple_Model';
+import { useSignin } from '../../../Hooks/Auth/useSignin';
 
 const Auth = () => {
 
@@ -30,10 +31,10 @@ const Auth = () => {
 
   const { 
     signup,
-    email, setEmail,
-    password, setPassword,
-    confirmPassword, setConfirmPassword,
-    terms, setTerms
+    signUpEmail, setSignUpEmail,
+    signUpPassword, setSignUpPassword,
+    signUpConfirmPassword, setSignUpConfirmPassword,
+    signUpTerms, setSignUpTerms
   } = useSignup();
 
   // Disable button if any field is empty
@@ -50,9 +51,27 @@ const Auth = () => {
   };
 
   // Disable button if any field is empty or while loading
-  const isDisabled = !email || !password || !confirmPassword || !terms || isLoading;
+  const isDisabledSignUp = !signUpEmail || !signUpPassword || !signUpConfirmPassword || !signUpTerms || isLoading;
 
   const [showModal, setShowModal] = useState(false);
+
+  const {
+    signInEmail, setSignInEmail,
+    signInpassword, setSignInpassword,
+    signin
+  } = useSignin();
+
+  const isDisabledSignIn = !signInEmail || !signInpassword || isLoading;
+
+  const handleSubmitSignIn = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    try {
+      await signin();
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <div className={`Auth ${isSignUp ? 'sign-up-mode' : ''}`}>
@@ -74,18 +93,24 @@ const Auth = () => {
             <h2 className="Title">{t("Sign in")}</h2>
             <div className="Input_Field">
               <Simple_Input_And_Lable 
-              label_text={"Email"}
+                label_text={"Email"}
+                value={signInEmail}
+                onChange={(e) => setSignInEmail(e.target.value)}
               />
             </div>
             <div className="Input_Field">
               <Simple_Input_And_Lable 
                 label_text={t('Password')}
                 type="password"
+                value={signInpassword}
+                onChange={(e) => setSignInpassword(e.target.value)}
               />
             </div>
             <div className='Button_Field'>
               <Simple_Button 
-                text={t('Sign in')}
+                text={isLoading ? t('Loading...') : t('Sign in')}
+                disabled={isDisabledSignIn}
+                onClick={handleSubmitSignIn}
               />
             </div>
           </form>
@@ -95,23 +120,23 @@ const Auth = () => {
             <div className="Input_Field">
               <Simple_Input_And_Lable 
               label_text={"Email"}
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={signUpEmail}
+              onChange={(e) => setSignUpEmail(e.target.value)}
               />
             </div>
             <div className="Input_Field">
               <Simple_Input_And_Lable 
                 label_text={t('Password')}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                value={signUpPassword}
+                onChange={(e) => setSignUpPassword(e.target.value)}
                 type="password"
               />
             </div>
             <div className="Input_Field">
               <Simple_Input_And_Lable 
                 label_text={t('Repete password')}
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
+                value={signUpConfirmPassword}
+                onChange={(e) => setSignUpConfirmPassword(e.target.value)}
                 type="password"
               />
             </div>
@@ -119,7 +144,7 @@ const Auth = () => {
               <div>
                 <input 
                   type='checkbox'
-                  onChange={(e) => setTerms(e.target.checked)}
+                  onChange={(e) => setSignUpTerms(e.target.checked)}
                 ></input>
                 <span>{t('Accept the terms')}</span>
               </div>
@@ -130,7 +155,7 @@ const Auth = () => {
             <div className='Button_Field'>
               <Simple_Button 
                 text={isLoading ? t('Loading...') : t('Sign up')}
-                disabled={isDisabled}
+                disabled={isDisabledSignUp}
                 onClick={handleSubmitSignUp}
               />
             </div>

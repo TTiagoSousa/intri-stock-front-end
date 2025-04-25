@@ -1,0 +1,84 @@
+@use '../../../Styles/Colors.scss' as Color;
+@use '../../../Styles/Fonts.scss' as Font;
+@use '../../../Styles/Formats.scss' as Format;
+
+
+.Mobile_Sidebar_Home{
+  position: fixed;
+  width: 300px;
+  height: 100vh;      
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  top: 0;
+  left: -100%;
+  transition: 850ms; 
+  z-index: 4;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  z-index: 44;
+  background-color: #232e3c;
+  
+  &.active{
+    left: 0;
+    transition: 350ms;
+  }
+
+  ul{
+    position: relative;
+    width: 250px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+
+    li{
+      position: relative;
+      width: 100%;
+      position: relative;
+      height: auto;
+      list-style: none;
+
+      a{
+        position: relative;
+        text-decoration: none;
+        padding: 5px 0px 5px 0px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .Icon{
+          position: relative;
+          height: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          
+          div{
+            width: 23px;
+          }
+        }
+
+        .Nav_Text{
+          width: 100%;
+          height: 100%;
+
+          span{
+            font-family: Font.$font_family_roboto;
+            font-size: 15px;
+            color: Color.$gray;
+          }
+        }
+      }
+
+      .Tooltip{
+
+        &.hide{
+          display: none;
+        }
+      }
+    }
+  }
+}
