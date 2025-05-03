@@ -72,6 +72,13 @@
     "Month" : "Month",
     "Total paid on fees" : "Total paid on fees",
     "Year" : "Year",
-    "Simulation" : "Simulation"
+    "Simulation" : "Simulation",
+    "Total Invested" : "Total Invested",
+    "Accumulated Total" : "Accumulated Total",
+    "Monthly Table" : "Monthly Table",
+    "Yearly Table" : "Yearly Table",
+    "Accumulated Interest Chart" : "Accumulated Interest Chart",
+    "Detailed Compound Interest Table" : "Detailed Compound Interest Table",
+    "Calculation successful" : "Calculation successful"
   }
 }

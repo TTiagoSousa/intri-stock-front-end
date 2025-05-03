@@ -7,7 +7,7 @@ import Simple_Button from '../../../Components/Buttons/Simple_Button/Simple_Butt
 import Simple_Selector_And_Lable from '../../../Components/Selectors/Simple_Selector_And_Lable/Simple_Selector_And_Lable';
 import { useCompoundInterestCalculator } from '../../../Hooks/Compound_Interest/useCompoundInterestCalculator';
 import Simple_Alert from '../../../Components/Alerts/Simple_Alert/Simple_Alert';
-import Investment_Table from './Components/Investment_Table';
+import Simulation_Data from './Components/Simulation_Data';
 
 const Compound_Interest_Calculator = () => {
 
@@ -47,8 +47,6 @@ const Compound_Interest_Calculator = () => {
     await calculateCompoundInterest(); // Calcula a simulação
     setIsLoading(false); // Desativa o loading após a simulação ser concluída
   }
-
-  console.log(calculationResult);
 
   return (
     <div className='Compound_Interest_Calculator'>
@@ -192,7 +190,7 @@ const Compound_Interest_Calculator = () => {
       </section>
 
       {calculationResult?.monthlyBreakdown && calculationResult?.yearlyBreakdown && (
-        <Investment_Table 
+        <Simulation_Data 
           monthlyBreakdown={calculationResult.monthlyBreakdown}
           yearlyBreakdown={calculationResult.yearlyBreakdown}
         />

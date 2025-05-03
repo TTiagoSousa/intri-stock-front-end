@@ -4,7 +4,7 @@
   height: auto;
   justify-content: right;
 
-  .Small_Container_With_SideBar_Open {
+  .Container_Sidebar_Home {
     width: calc(100% - 270px);
     height: auto;
     margin-top: 5vh;
@@ -14,22 +14,7 @@
     box-sizing: border-box;
     transition: all 0.3s;
     display: flex;
-    padding: 0px 10px 0px 10px;
-    // background-color: red !important;
-  }
-
-  .Small_Container_With_SideBar_Close {
-    width: calc(100% - 70px);
-    height: auto;
-    margin-top: 5vh;
-    transition: 0.3s all;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    transition: all 0.3s;
-    display: flex;
-    padding: 0px 10px 0px 10px;
-    // background-color: red !important;
+    padding: 0px 10px 15px 10px;
   }
 
   .Container_With_MobileMenu {

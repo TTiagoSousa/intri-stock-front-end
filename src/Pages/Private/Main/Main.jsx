@@ -14,9 +14,7 @@ const Main = () => {
   function getNavClass() {
     switch (typeOfNavifation) {
       case "Sidebar_Home":
-        return sidebar_Home
-          ? "Small_Container_With_SideBar_Open"
-          : "Small_Container_With_SideBar_Close";
+        return "Container_Sidebar_Home"
       case "Mobile_Menu":
         return "Container_With_MobileMenu";
       default:

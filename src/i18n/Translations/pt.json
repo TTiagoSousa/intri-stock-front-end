@@ -72,6 +72,11 @@
     "Month" : "Mês",
     "Total paid on fees" : "Total pago em taxas",
     "Year" : "Ano",
-    "Simulation" : "Simulação"
+    "Simulation" : "Simulação",
+    "Monthly Table" : "Tabela mensal",
+    "Yearly Table" : "Tabela anual",
+    "Accumulated Interest Chart" : "Gráfico dos Juros Acumulados",
+    "Detailed Compound Interest Table" : "Tabela detalhada de juros compostos",
+    "Calculation successful" : "Cálculo bem sucedido"
   }
 }
