@@ -30,7 +30,7 @@
     box-sizing: border-box;
     text-align: center;
     cursor: pointer;
-
+    min-height: 30px;
     &:focus{
       background: none;
     }
